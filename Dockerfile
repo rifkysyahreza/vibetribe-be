@@ -10,8 +10,7 @@ RUN mvn dependency:go-offline -B
 
 # Copy the source code and build the application
 COPY src ./src
-COPY backend-0.0.1-SNAPSHOT.jar .
-#RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Stage 2: Create the final image
 FROM eclipse-temurin:23-jre-alpine
